@@ -27,7 +27,7 @@ describe('Dev Finances', () => {
     
   });
 
-  it.only('Remove Entrance and Costs', () => {
+  it('Remove Entrance and Costs', () => {
     const entrance = 'Payment'
     const cost = 'Rent'
 
@@ -44,14 +44,16 @@ describe('Dev Finances', () => {
     cy.get('[type=date]').type('2025-05-05')
     cy.get('button').contains('Salvar').click()
 
-    cy.contains(entrance)
+    cy.get('td.description')
+      .contains(entrance)
       .parent()
       .find('img[onClick*=remove]')  
       .click()   
 
-    cy.contains(cost)
-      .parent()
-      .find('img[onClick*=remove]')  
+    cy.get('td.description')
+      .contains(cost)
+      .siblings()
+      .children('img[onClick*=remove]')  
       .click()     
 
   });
