@@ -20,7 +20,7 @@ describe('Dev Finances', () => {
 
   });
 
-  it('Add Costs', () => {
+  it('Add C osts', () => {
     cy.get('#transaction .button').click()
     cy.get('#description').type('Rent')
     cy.get('[name=amount]').type(-2000)
