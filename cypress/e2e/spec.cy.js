@@ -4,8 +4,7 @@ describe('Dev Finances', () => {
     cy.visit('https://devfinance-agilizei.netlify.app/')
   });
 
-
-  it('Add Entrance', () => {
+   it('Add Entrance', () => {
     cy.get('#transaction .button').click()
     cy.get('#description').type('Payment')
     cy.get('[name=amount]').type(12000)
@@ -54,7 +53,12 @@ describe('Dev Finances', () => {
       .contains(cost)
       .siblings()
       .children('img[onClick*=remove]')  
-      .click()     
+      .click()    
+      
+    it('Validate balance with multiple transactions', () => {
+      
+      
+    });
 
   });
 })
