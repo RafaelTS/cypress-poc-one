@@ -1,4 +1,4 @@
-export const format = (value)  => {
+export const format = (value) => {
     let formattedValue
 
     formattedValue = value.replace(',', '.')
@@ -14,7 +14,7 @@ export const randonNumber = () => {
 }
 
 export const prepareLocalStorage = (win) => {
-    win.localstorage.setItem('dev.finances:transactions' , JSON.stringify([
+    win.localStorage.setItem('dev.finances:transactions', JSON.stringify([
         {
             description: "Payment",
             amount: randonNumber() * 100,
@@ -22,8 +22,9 @@ export const prepareLocalStorage = (win) => {
         },
         {
             description: "Cost",
-            amount: - (randonNumber)() * 100,
+            amount: - (randonNumber() * 100),
             date: "09/06/2025"
         }
-    ]))
+    ])
+    )
 } 
